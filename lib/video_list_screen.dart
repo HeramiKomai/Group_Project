@@ -12,7 +12,7 @@ class VideoListScreen extends StatelessWidget {
         SnackBar(
           content: Text('ไม่สามารถเปิด URL ได้: $url'),
           backgroundColor: Colors.red,
-        ),
+        ), //test
       );
     }
   }

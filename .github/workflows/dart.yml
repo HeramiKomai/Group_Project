@@ -14,12 +14,12 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.38.6'
+          flutter-version: '3.19.0'
 
       - name: Install dependencies
         run: flutter pub get
 
-        - name: Create google-services.json
+      - name: Create google-services.json
         run: echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > android/app/google-services.json
 
       - name: Build APK (Release)
@@ -30,9 +30,6 @@ jobs:
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
-
-      - name: Build APK (Release)
-        run: flutter build apk --release
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
